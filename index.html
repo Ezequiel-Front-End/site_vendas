@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Vendas</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/style/index.css">
+
+    <!-- Box Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+<body>
+
+   
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+            <a class="navbar-brand" href="/">Loja Virtual</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto"></ul>
+
+                <div class="d-flex gap-2">
+                    <div class="position-relative">
+                        <button id="cartButton" class="btn btn-outline-success">
+                            Meu carrinho <i class='bx bx-cart-alt'></i>
+                        </button>
+
+                        <!-- DROPDOWN DO CARRINHO -->
+                        <div id="cart-dropdown" style="
+            display:none;
+            position:absolute;
+            right:0;
+            top:45px;
+            width:320px;
+            background:#fff;
+            border:1px solid #ddd;
+            border-radius:6px;
+            z-index:9999;
+            box-shadow:0 4px 10px rgba(0,0,0,0.15);
+         ">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carousel / Banner -->
+    <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"></button>
+        </div>
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active banner-item">
+                <img src="https://marketplace.canva.com/EAF6JHIye5U/3/0/1600w/canva-banner-de-mercado-shops-loja-virtual-promo%C3%A7%C3%A3o-de-roupas-moda-marrom-IaLel2myS_s.jpg"
+                    alt="Banner 1">
+                <div class="carousel-caption">
+                    <h5>Novas Coleções</h5>
+                    <p>Confira as últimas tendências</p>
+                </div>
+            </div>
+
+            <div class="carousel-item banner-item">
+                <img src="https://marketplace.canva.com/EAGQfABLjV0/1/0/1600w/canva-banner-para-loja-de-moda-look-b%C3%A1sico-6yz1uLpZjE4.jpg"
+                    alt="Banner 2">
+                <div class="carousel-caption">
+                    <h5>Ofertas Especiais</h5>
+                    <p>Descontos imperdíveis</p>
+                </div>
+            </div>
+
+            <div class="carousel-item banner-item">
+                <img src="https://marketplace.canva.com/EAE_LpybbnA/1/0/1600w/canva-banner-para-site-de-moda-ou-loja-de-roupas-minimalista-e-elegante-azul-laranja-e-branco-hENCorlqrjs.jpg"
+                    alt="Banner 3">
+                <div class="carousel-caption">
+                    <h5>Frete Grátis</h5>
+                    <p>Para compras acima de R$199</p>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+
+    </div>
+
+    <!-- conteudo do site / filtro e cards  -->
+    <!-- <div class="container mt-5">
+        <div class="row">
+            <div class="col-4">
+                <div class="title-filter-content">
+                    <span>
+                    <i class='bx  bx-filter'></i> 
+                </span>
+                <h3>Filtro por:</h3>
+                </div> 
+
+                <div class="filter-container">
+                    <div class="filter-container-title">
+                        <h5>Tipo</h5>
+                    </div>
+
+                    <div class="filter-container-content">
+                        <input type="checkbox">
+                        <span>Básico</span>
+                    </div>
+
+                     <div class="filter-container-content">
+                        <input type="checkbox">
+                        <span>Simples</span>
+                    </div>
+
+                     <div class="filter-container-content">
+                        <input type="checkbox">
+                        <span>Complexo</span>
+                    </div>
+                </div>
+
+                 <div class="filter-container">
+                    <div class="filter-container-title">
+                        <h5>Cor</h5>
+                    </div>
+
+                    <div class="filter-container-content">
+                        <input type="checkbox">
+                        <span>Básico</span>
+                    </div>
+
+                     <div class="filter-container-content">
+                        <input type="checkbox">
+                        <span>Simples</span>
+                    </div>
+
+                     <div class="filter-container-content">
+                        <input type="checkbox">
+                        <span>Complexo</span>
+                    </div>
+                </div>
+
+                 <div class="filter-container">
+                    <div class="filter-container-title">
+                        <h5>Tamanho</h5>
+                    </div>
+
+                    <div class="filter-container-content">
+                        <input type="checkbox">
+                        <span>Básico</span>
+                    </div>
+
+                     <div class="filter-container-content">
+                        <input type="checkbox">
+                        <span>Simples</span>
+                    </div>
+
+                     <div class="filter-container-content">
+                        <input type="checkbox">
+                        <span>Complexo</span>
+                    </div>
+                </div>
+
+                 <div class="filter-container">
+                    <div class="filter-container-title">
+                        <h5>Preço</h5>
+                    </div>
+
+                    <div class="filter-container-content">
+                        <input type="checkbox">
+                        <span>Básico</span>
+                    </div>
+
+                     <div class="filter-container-content">
+                        <input type="checkbox">
+                        <span>Simples</span>
+                    </div>
+
+                     <div class="filter-container-content">
+                        <input type="checkbox">
+                        <span>Complexo</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-8">
+                <h3>Conteudo</h3>
+
+                <div class="row mt-3">
+                    <div class="col-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXzNeZJqHiBbaMnppIf6sgSLRrZlq8ajrs4NpPp4BKQZ9WhKmR2LwqkjEx7R9EJ7CzB_bcybsxxCknMddoaiBHDYd6GrdS3S_pKL9mNAG8MULaKV4yRmIgUyKzqmfj0ySf8S86bBML_GRP_ryenKWHnYMxISnhC9OgCCMi20KJc-xMgx91z6IRTedBJwbD/s16000-rw/1668440503637261b7a0f4b_1668440503_3x2_lg.jpg=w20-h22-p-k-no-nu" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card’s content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXzNeZJqHiBbaMnppIf6sgSLRrZlq8ajrs4NpPp4BKQZ9WhKmR2LwqkjEx7R9EJ7CzB_bcybsxxCknMddoaiBHDYd6GrdS3S_pKL9mNAG8MULaKV4yRmIgUyKzqmfj0ySf8S86bBML_GRP_ryenKWHnYMxISnhC9OgCCMi20KJc-xMgx91z6IRTedBJwbD/s16000-rw/1668440503637261b7a0f4b_1668440503_3x2_lg.jpg=w20-h22-p-k-no-nu" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card’s content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXzNeZJqHiBbaMnppIf6sgSLRrZlq8ajrs4NpPp4BKQZ9WhKmR2LwqkjEx7R9EJ7CzB_bcybsxxCknMddoaiBHDYd6GrdS3S_pKL9mNAG8MULaKV4yRmIgUyKzqmfj0ySf8S86bBML_GRP_ryenKWHnYMxISnhC9OgCCMi20KJc-xMgx91z6IRTedBJwbD/s16000-rw/1668440503637261b7a0f4b_1668440503_3x2_lg.jpg=w20-h22-p-k-no-nu" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card’s content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="row mt-3">
+                    <div class="col-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXzNeZJqHiBbaMnppIf6sgSLRrZlq8ajrs4NpPp4BKQZ9WhKmR2LwqkjEx7R9EJ7CzB_bcybsxxCknMddoaiBHDYd6GrdS3S_pKL9mNAG8MULaKV4yRmIgUyKzqmfj0ySf8S86bBML_GRP_ryenKWHnYMxISnhC9OgCCMi20KJc-xMgx91z6IRTedBJwbD/s16000-rw/1668440503637261b7a0f4b_1668440503_3x2_lg.jpg=w20-h22-p-k-no-nu" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card’s content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXzNeZJqHiBbaMnppIf6sgSLRrZlq8ajrs4NpPp4BKQZ9WhKmR2LwqkjEx7R9EJ7CzB_bcybsxxCknMddoaiBHDYd6GrdS3S_pKL9mNAG8MULaKV4yRmIgUyKzqmfj0ySf8S86bBML_GRP_ryenKWHnYMxISnhC9OgCCMi20KJc-xMgx91z6IRTedBJwbD/s16000-rw/1668440503637261b7a0f4b_1668440503_3x2_lg.jpg=w20-h22-p-k-no-nu" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card’s content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXzNeZJqHiBbaMnppIf6sgSLRrZlq8ajrs4NpPp4BKQZ9WhKmR2LwqkjEx7R9EJ7CzB_bcybsxxCknMddoaiBHDYd6GrdS3S_pKL9mNAG8MULaKV4yRmIgUyKzqmfj0ySf8S86bBML_GRP_ryenKWHnYMxISnhC9OgCCMi20KJc-xMgx91z6IRTedBJwbD/s16000-rw/1668440503637261b7a0f4b_1668440503_3x2_lg.jpg=w20-h22-p-k-no-nu" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card’s content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="row mt-3">
+                    <div class="col-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXzNeZJqHiBbaMnppIf6sgSLRrZlq8ajrs4NpPp4BKQZ9WhKmR2LwqkjEx7R9EJ7CzB_bcybsxxCknMddoaiBHDYd6GrdS3S_pKL9mNAG8MULaKV4yRmIgUyKzqmfj0ySf8S86bBML_GRP_ryenKWHnYMxISnhC9OgCCMi20KJc-xMgx91z6IRTedBJwbD/s16000-rw/1668440503637261b7a0f4b_1668440503_3x2_lg.jpg=w20-h22-p-k-no-nu" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card’s content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXzNeZJqHiBbaMnppIf6sgSLRrZlq8ajrs4NpPp4BKQZ9WhKmR2LwqkjEx7R9EJ7CzB_bcybsxxCknMddoaiBHDYd6GrdS3S_pKL9mNAG8MULaKV4yRmIgUyKzqmfj0ySf8S86bBML_GRP_ryenKWHnYMxISnhC9OgCCMi20KJc-xMgx91z6IRTedBJwbD/s16000-rw/1668440503637261b7a0f4b_1668440503_3x2_lg.jpg=w20-h22-p-k-no-nu" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card’s content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXzNeZJqHiBbaMnppIf6sgSLRrZlq8ajrs4NpPp4BKQZ9WhKmR2LwqkjEx7R9EJ7CzB_bcybsxxCknMddoaiBHDYd6GrdS3S_pKL9mNAG8MULaKV4yRmIgUyKzqmfj0ySf8S86bBML_GRP_ryenKWHnYMxISnhC9OgCCMi20KJc-xMgx91z6IRTedBJwbD/s16000-rw/1668440503637261b7a0f4b_1668440503_3x2_lg.jpg=w20-h22-p-k-no-nu" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card’s content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="row mt-3">
+                    <div class="col-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXzNeZJqHiBbaMnppIf6sgSLRrZlq8ajrs4NpPp4BKQZ9WhKmR2LwqkjEx7R9EJ7CzB_bcybsxxCknMddoaiBHDYd6GrdS3S_pKL9mNAG8MULaKV4yRmIgUyKzqmfj0ySf8S86bBML_GRP_ryenKWHnYMxISnhC9OgCCMi20KJc-xMgx91z6IRTedBJwbD/s16000-rw/1668440503637261b7a0f4b_1668440503_3x2_lg.jpg=w20-h22-p-k-no-nu" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card’s content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXzNeZJqHiBbaMnppIf6sgSLRrZlq8ajrs4NpPp4BKQZ9WhKmR2LwqkjEx7R9EJ7CzB_bcybsxxCknMddoaiBHDYd6GrdS3S_pKL9mNAG8MULaKV4yRmIgUyKzqmfj0ySf8S86bBML_GRP_ryenKWHnYMxISnhC9OgCCMi20KJc-xMgx91z6IRTedBJwbD/s16000-rw/1668440503637261b7a0f4b_1668440503_3x2_lg.jpg=w20-h22-p-k-no-nu" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card’s content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXzNeZJqHiBbaMnppIf6sgSLRrZlq8ajrs4NpPp4BKQZ9WhKmR2LwqkjEx7R9EJ7CzB_bcybsxxCknMddoaiBHDYd6GrdS3S_pKL9mNAG8MULaKV4yRmIgUyKzqmfj0ySf8S86bBML_GRP_ryenKWHnYMxISnhC9OgCCMi20KJc-xMgx91z6IRTedBJwbD/s16000-rw/1668440503637261b7a0f4b_1668440503_3x2_lg.jpg=w20-h22-p-k-no-nu" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card’s content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div> -->
+    <div class="container mt-5">
+        <div class="row">
+
+            <!-- FILTRO -->
+            <aside class="col-lg-3 col-md-4 col-12 mb-4">
+                <h4 class="mb-3"><i class="bx bx-filter"></i> Filtros</h4>
+
+                <div class="filter-box">
+                    <h5>Tipo</h5>
+                    <label class="custom-check">
+                        <input type="checkbox" class="filter-checkbox" data-filter-type="tipo" value="Básico">
+                        <span></span> Básico
+                    </label>
+                    <label class="custom-check">
+                        <input type="checkbox" class="filter-checkbox" data-filter-type="tipo" value="Premium">
+                        <span></span> Premium
+                    </label>
+                    <label class="custom-check">
+                        <input type="checkbox" class="filter-checkbox" data-filter-type="tipo" value="Luxo">
+                        <span></span> Luxo
+                    </label>
+                </div>
+
+                <div class="filter-box mt-2">
+                    <h5>Cor</h5>
+                    <label class="custom-check">
+                        <input type="checkbox" class="filter-checkbox" data-filter-type="cor" value="Vermelho">
+                        <span></span> Vermelho
+                    </label>
+                    <label class="custom-check">
+                        <input type="checkbox" class="filter-checkbox" data-filter-type="cor" value="Azul">
+                        <span></span> Azul
+                    </label>
+                    <label class="custom-check">
+                        <input type="checkbox" class="filter-checkbox" data-filter-type="cor" value="Verde">
+                        <span></span> Verde
+                    </label>
+                </div>
+
+                <div class="filter-box mt-2">
+                    <h5>Tamanho</h5>
+                    <label class="custom-check">
+                        <input type="checkbox" class="filter-checkbox" data-filter-type="tamanho" value="P">
+                        <span></span> P
+                    </label>
+                    <label class="custom-check">
+                        <input type="checkbox" class="filter-checkbox" data-filter-type="tamanho" value="M">
+                        <span></span> M
+                    </label>
+                    <label class="custom-check">
+                        <input type="checkbox" class="filter-checkbox" data-filter-type="tamanho" value="G">
+                        <span></span> G
+                    </label>
+                </div>
+            </aside>
+
+
+            <!-- PRODUTOS -->
+            <main class="col-lg-9 col-md-8 col-12">
+                <div class="row" id="product-list"></div>
+
+                <!-- PAGINAÇÃO -->
+                <div class="pagination-container">
+                    <button id="prev">Anterior</button>
+                    <span id="page-info"></span>
+                    <button id="next">Próximo</button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+    <!-- footer  -->
+    <footer class="text-center text-lg-start text-white mt-5" style="background-color: #333333">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Links -->
+            <section class="">
+                <!--Grid row-->
+                <div class="row">
+                    <!-- Grid column: Redes Sociais -->
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Redes Sociais</h6>
+
+                        <!-- Instagram -->
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac" href="#!"
+                            role="button">  
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <!-- Facebook -->
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998" href="#!"
+                            role="button"><i class="fab fa-facebook-f"></i></a>
+
+                        <!-- Twitter -->
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="#!"
+                            role="button"><i class="fab fa-twitter"></i></a>
+
+                        <!-- LinkedIn -->
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #0077b5" href="#!"
+                            role="button"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="w-100 clearfix d-md-none" />
+
+                    <!-- Grid column: Endereço -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Endereço</h6>
+                        <p>Rua do Comércio, 123</p>
+                        <p>Bairro Centro</p>
+                        <p>Carapicuíba - SP</p>
+                        <p>CEP: 06300-000</p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="w-100 clearfix d-md-none" />
+
+                    <!-- Grid column: Contato -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Contato</h6>
+                        <p><i class="fas fa-envelope mr-3"></i> contato@lojavirtual.com.br</p>
+                        <p><i class="fas fa-phone mr-3"></i> (11) 4002-8922</p>
+                        <p><i class="fas fa-fax mr-3"></i> (11) 4002-8923</p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="w-100 clearfix d-md-none" />
+
+                    <!-- Grid column: Nossos Serviços -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Nossos Serviços</h6>
+                        <p><a class="text-white" href="#!">Vendas Online</a></p>
+                        <p><a class="text-white" href="#!">Suporte ao Cliente</a></p>
+                        <p><a class="text-white" href="#!">Entrega Expressa</a></p>
+                        <p><a class="text-white" href="#!">Garantia de Qualidade</a></p>
+                    </div>
+                </div>
+                <!--Grid row-->
+            </section>
+            <!-- Section: Links -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2026 Copyright:
+            <a class="text-white" href="#">lojavirtual.com.br</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script type="module" src="src/js/index.js"></script>
+
+</body>
+
+</html>

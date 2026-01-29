@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Vendas</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/src/style/view_product.css" type="text/css">
+
+    <!-- Box Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+            <a class="navbar-brand" href="/">Loja Virtual</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto"></ul>
+
+                <div class="d-flex gap-2">
+                    
+                    <div class="position-relative">
+                        <button id="cartButton" class="btn btn-outline-success">
+                            Meu carrinho <i class='bx bx-cart-alt'></i>
+                        </button>
+
+                        <!-- DROPDOWN DO CARRINHO -->
+                        <div id="cart-dropdown" style="
+            display:none;
+            position:absolute;
+            right:0;
+            top:45px;
+            width:320px;
+            background:#fff;
+            border:1px solid #ddd;
+            border-radius:6px;
+            z-index:9999;
+            box-shadow:0 4px 10px rgba(0,0,0,0.15);
+         ">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Coluna da esquerda: Galeria de imagens -->
+            <div class="col-lg-8">
+                <div class="row">
+                    <!-- Imagem grande -->
+                    <div class="col-12 mb-3">
+                        <img src="" class="img-fluid rounded" alt="Produto Grande">
+                    </div>
+                    <!-- Três imagens menores -->
+                    <div class="col-4">
+                        <img src="" class="img-fluid rounded mb-3" alt="Produto Pequeno 1">
+                    </div>
+                    <div class="col-4">
+                        <img src="" class="img-fluid rounded mb-3" alt="Produto Pequeno 2">
+                    </div>
+                    <div class="col-4">
+                        <img src="" class="img-fluid rounded mb-3" alt="Produto Pequeno 3">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna da direita: Descrição e botão -->
+            <div class="col-lg-4">
+                <h2>Nome do Produto</h2>
+                <h4 class="text-primary">R$ 199,90</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vehicula elit at metus porttitor,
+                    nec fermentum erat tristique. Suspendisse potenti. Fusce non magna at nulla ullamcorper bibendum.
+                </p>
+
+                <h5 class="text-black">Descrição</h5>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vehicula elit at metus porttitor,
+                    nec fermentum erat tristique. Suspendisse potenti. Fusce non magna at nulla ullamcorper bibendum.
+                </p>
+
+                <button id="add-cart-btn" class="btn btn-success btn-lg w-100 mt-2" disabled>Adicionar ao
+                    Carrinho</button>
+
+            </div>
+        </div>
+    </div>
+
+ 
+    <!-- footer  -->
+    <footer class="text-center text-lg-start text-white mt-5" style="background-color: #333333">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Links -->
+            <section class="">
+                <!--Grid row-->
+                <div class="row">
+                    <!-- Grid column: Redes Sociais -->
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Redes Sociais</h6>
+
+                        <!-- Instagram -->
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac" href="#!"
+                            role="button">  
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <!-- Facebook -->
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998" href="#!"
+                            role="button"><i class="fab fa-facebook-f"></i></a>
+
+                        <!-- Twitter -->
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="#!"
+                            role="button"><i class="fab fa-twitter"></i></a>
+
+                        <!-- LinkedIn -->
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #0077b5" href="#!"
+                            role="button"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="w-100 clearfix d-md-none" />
+
+                    <!-- Grid column: Endereço -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Endereço</h6>
+                        <p>Rua do Comércio, 123</p>
+                        <p>Bairro Centro</p>
+                        <p>Carapicuíba - SP</p>
+                        <p>CEP: 06300-000</p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="w-100 clearfix d-md-none" />
+
+                    <!-- Grid column: Contato -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Contato</h6>
+                        <p><i class="fas fa-envelope mr-3"></i> contato@lojavirtual.com.br</p>
+                        <p><i class="fas fa-phone mr-3"></i> (11) 4002-8922</p>
+                        <p><i class="fas fa-fax mr-3"></i> (11) 4002-8923</p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="w-100 clearfix d-md-none" />
+
+                    <!-- Grid column: Nossos Serviços -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Nossos Serviços</h6>
+                        <p><a class="text-white" href="#!">Vendas Online</a></p>
+                        <p><a class="text-white" href="#!">Suporte ao Cliente</a></p>
+                        <p><a class="text-white" href="#!">Entrega Expressa</a></p>
+                        <p><a class="text-white" href="#!">Garantia de Qualidade</a></p>
+                    </div>
+                </div>
+                <!--Grid row-->
+            </section>
+            <!-- Section: Links -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2026 Copyright:
+            <a class="text-white" href="#">lojavirtual.com.br</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script type="module" src="../js/view_product.js"></script>
+
+</body>
+
+</html>
